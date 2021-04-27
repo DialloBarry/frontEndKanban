@@ -1,16 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>
-        Mes appareils</h2>
-        <ul class="list-group">
-         <!-- <app-appareil [appareil]="appareil1" [appareilStatus]="'eteint'"></app-appareil>
-          <app-appareil [appareil]="appareil2" [appareilStatus]="'allumé'"></app-appareil>
-          <app-appareil [appareil]="appareil3" [appareilStatus]="'eteint'"></app-appareil>
---><app-appareil *ngFor="let apps of appareils" [appareil]="apps.name" [appareilStatus]="apps.status"></app-appareil>
+<app-navigation-bar></app-navigation-bar>
 
-        </ul>
-        <button class="btn btn-success" [disabled]="!isAuth" (click)="onTurnOn()"> tout etteindre</button>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
+
+

@@ -1,0 +1,21 @@
+<form>
+  <div class="col-sm-9" style="margin-left: 150px;">
+
+
+    <h1>Enregistrement d'un utilisateur</h1>
+    <div class="container">
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input class="form-control form-control-lg" type="text" placeholder="Type your full name" [(ngModel)]="user.name" name="name">
+      </div>
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <select class="form-control form-control-lg" [(ngModel)]="user.fichename" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let fiche of fiches">{{fiche.libelle}}</option>
+
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="onSubmit()"> Submit</button>
+
+    </div>
+
+  </div>
+</form>

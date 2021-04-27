@@ -1,0 +1,60 @@
+<form>
+  <div class="col-sm-9" style="margin-left: 150px;">
+
+    <h1>Enregistrement d'une fiche</h1>
+    <div class="container">
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input class="form-control" type="text" placeholder="Label" [(ngModel)]="fiche.label" name="label">
+      </div>
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input class="form-control" type="text" placeholder="Lieu" [(ngModel)]="fiche.lieu" name="lieu">
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <select [(ngModel)]="fiche.username" [ngModelOptions]="{standalone: true}" class="form-control ">
+          <option *ngFor="let user of users">{{user.name}}</option>
+        </select>
+      </div>
+
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+
+        <select class="form-control" [(ngModel)]="fiche.section" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let section of section">{{section.status}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input class="  form-control" type="text" placeholder="Notes" [(ngModel)]="fiche.notes" name="notes">
+      </div>
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input class="form-control form-control-sm" type="text" placeholder="Tags" [(ngModel)]="fiche.tag" name="tag">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input type="url" type="url" class="form-control" id="inputPassword" placeholder="url" [(ngModel)]="fiche.url"
+          name="url">
+      </div>
+      <div class="col-xs-14 col-12 col-md-4 form-group">
+        <input type="number" class="form-control" placeholder="Temps estimé en semeaines"
+          [(ngModel)]="fiche.tempsestime" name="tempsestime">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-14 col-12 col-md-4 form-group">
+          <input type="text" placeholder="Date Butoire" class="form-control" bsDatepicker
+            [(ngModel)]="fiche.dateButoire" name="dateButoire">
+
+        </div>
+
+      </div>
+    </div>
+    <div><button type="submit" class="btn btn-success" (click)="onSubmit()"> Submit</button></div>
+
+  </div>
+</form>

@@ -13,6 +13,7 @@
           "style": "scss",
           "skipTests": true
         },
+
         "@schematics/angular:class": {
           "skipTests": true
         },
@@ -38,6 +39,7 @@
           "strict": true
         }
       },
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -56,10 +58,12 @@
               "src/assets"
             ],
             "styles": [
+
               "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
           },
           "configurations": {
             "production": {
@@ -91,23 +95,29 @@
             }
           }
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "mon-premier-projet:build"
+
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "browserTarget": "mon-premier-projet:build",
+              "proxyConfig": "src/proxy.conf.json"
+            }
+
           },
+
           "configurations": {
             "production": {
               "browserTarget": "mon-premier-projet:build:production"
             }
-          }
-        },
+          },
+
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "mon-premier-projet:build"
           }
         },
+
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -122,7 +132,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
           }
         },
         "lint": {
@@ -143,6 +153,7 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "mon-premier-projet:serve"
+
           },
           "configurations": {
             "production": {
@@ -153,5 +164,8 @@
       }
     }
   },
+
   "defaultProject": "mon-premier-projet"
+
+
 }
