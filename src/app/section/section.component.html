@@ -1,18 +1,28 @@
 <form>
   <div class="col-sm-9" style="margin-left: 150px;">
     <h1>Enregistrement d'une section</h1>
-    <div class="container">
-      <div class="col-xs-14 col-12 col-md-4 form-group">
-        <input class="form-control form-control-lg" type="text" placeholder="Status" [(ngModel)]="section.status" name="status">
-      </div>
-      <div class="col-xs-14 col-12 col-md-4 form-group">
-      <select class="form-control form-control-lg" [(ngModel)]="section.fichename" [ngModelOptions]="{standalone: true}">
+    <h4  [hidden] = "namefiche" style=" margin-bottom: 40px;"> Cliquer sur le bouton <B>add fiche</B> pour ajouter la fiche {{section.fichename}} à ce status est:</h4>
+    <div>
+    <div class="col-xs-14 col-12 col-md-4 form-group" >
+      <input class="form-control form-control-lg" type="text" placeholder="Status" [(ngModel)]="section.status"
+        name="status">
+    </div>
+  </div>
+    <button type="submit" class="btn btn-success" (click)="addFiche()"  > add Fiche </button>
+
+    <div class="col-xs-14 col-12 col-md-4 form-group">
+      <select class="form-control form-control-lg" [(ngModel)]="section.fichename"
+        [ngModelOptions]="{standalone: true}">
         <option *ngFor="let fiche of fiches">{{fiche.libelle}}</option>
       </select>
-    </div>
-    <button type="submit" class="btn btn-success" (click)="saveSection()"> Submit</button>
 
     </div>
+
+    <div>
+      <button type="submit" style=" margin-top: 5px;" class="btn btn-success" (click)="saveSection()"> Submit</button>
+    </div>
+
+
 
   </div>
 </form>

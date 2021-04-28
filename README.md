@@ -1,6 +1,7 @@
-# MonPremierProjet
+# MonProjetKanban
+voir  le fichier rapport pour la description du projet et le mode de lancement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+.
 
 ## Development server
 

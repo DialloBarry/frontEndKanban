@@ -13,11 +13,22 @@ import { FicheService } from '../fiche.service';
 })
 export class UserComponent implements OnInit {
   fiches :any = [];
-  user = {
+  incr=this.incremen();
+   user = {
     name: '',
-    fichename: this.fiches[0]
+    fichename: this.fiches[this.incr]
+
   }
+incremen():number{
+  for (var i = 0; i < this.fiches.length; i++) {
+    console.log(i);
+ }
+ return i;
+}
+
+
   constructor(private serviceFiche: FicheService, private serviceUser: UserServiceService ) { }
+
 
   ngOnInit(): void {
     this.serviceFiche.getfiches().subscribe((data) => {
@@ -25,6 +36,8 @@ export class UserComponent implements OnInit {
     });
     console.log(this.fiches.toString);
   }
+
+
   fillfiches(fiches:any[]){
     fiches.forEach((fiche:any) => this.fiches.push(fiche));
     console.log("fiches after : "+JSON.stringify(this.fiches));
