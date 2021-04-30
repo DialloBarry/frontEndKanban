@@ -16,7 +16,9 @@ export class UserComponent implements OnInit {
   incr=this.incremen();
    user = {
     name: '',
-    fichename: this.fiches[this.incr]
+    prenom: '',
+    adresse: ''
+
 
   }
 incremen():number{
@@ -45,11 +47,11 @@ incremen():number{
   }
 
   saveUser(){
-    const fiche = this.getSelectedfiche(this.user.fichename);
-    console.log("selected fiche : " + JSON.stringify(fiche));
+
     const data = {
       name: this.user.name,
-      fiche:[{ "id": fiche.id, "libelle": fiche.libelle }],
+      prenom: this.user.prenom,
+      adresse: this.user.adresse,
 
     };
     this.serviceUser.create(data).subscribe(() => {

@@ -4,11 +4,10 @@ import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserServiceService } from '../user-service.service';
-import { Utilisateur } from '../utilisateur';
-import { Fiche } from '../fiche';
 import { CalendarModule } from 'primeng/calendar';
 import { FicheService } from '../fiche.service';
 import { SectionService } from '../section.service';
+
 
 @Component({
   selector: 'app-fiche',
@@ -16,6 +15,7 @@ import { SectionService } from '../section.service';
   styleUrls: ['./fiche.component.scss']
 })
 export class FicheComponent implements OnInit {
+
   users: any = [];
   section: any = [];
   fiche = {
@@ -33,9 +33,11 @@ export class FicheComponent implements OnInit {
 
 
   constructor(private userAPI: UserServiceService, private fichesAPI: FicheService, private sectionService: SectionService) {
+
   }
 
   ngOnInit(): void {
+
     this.userAPI.getusers().subscribe((data) => {
       this.fillUsers(data);
       console.log("users inside foreach : " + JSON.stringify(this.users));
@@ -99,7 +101,9 @@ export class FicheComponent implements OnInit {
   }
 
   onSubmit() {
-    this.savefiche();
+
+      this.savefiche();
+
   }
 
 

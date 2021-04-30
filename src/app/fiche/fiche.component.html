@@ -1,10 +1,10 @@
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="col-sm-9" style="margin-left: 150px;">
 
     <h1>Enregistrement d'une fiche</h1>
     <div class="container">
       <div class="col-xs-14 col-12 col-md-4 form-group">
-        <input class="form-control" type="text" placeholder="Label" [(ngModel)]="fiche.label" name="label">
+        <input class="form-control"  placeholder="Label" [(ngModel)]="fiche.label" name="label">
       </div>
       <div class="col-xs-14 col-12 col-md-4 form-group">
         <input class="form-control" type="text" placeholder="Lieu" [(ngModel)]="fiche.lieu" name="lieu">
@@ -14,7 +14,7 @@
     <div class="container">
       <div class="col-xs-14 col-12 col-md-4 form-group">
         <select [(ngModel)]="fiche.username" [ngModelOptions]="{standalone: true}" class="form-control ">
-          <option *ngFor="let user of users">{{user.name}}</option>
+          <option *ngFor="let user of users" >{{user.name}}</option>
         </select>
       </div>
 
@@ -40,8 +40,7 @@
           name="url">
       </div>
       <div class="col-xs-14 col-12 col-md-4 form-group">
-        <input type="number" class="form-control" placeholder="Temps estimé en semeaines"
-          [(ngModel)]="fiche.tempsestime" name="tempsestime">
+        <input type="number" id="tempsestime" *ngIf="fiche.tempsestime.toString()" placeholder="Temps estimé en semeaines" [(ngModel)]="fiche.tempsestime" name="tempsestime">
       </div>
     </div>
     <div class="container">

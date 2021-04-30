@@ -1,14 +1,14 @@
 <form>
   <div class="col-sm-9" style="margin-left: 150px;">
     <h1>Enregistrement d'une section</h1>
-    <h4  [hidden] = "namefiche" style=" margin-bottom: 40px;"> Cliquer sur le bouton <B>add fiche</B> pour ajouter la fiche {{section.fichename}} à ce status est:</h4>
+    <h4  [hidden] = "namefiche" style=" margin-bottom: 40px;">Selectionner la fiche et cliquer sur le bouton <B>ajouter fiche</B> pour ajouter la fiche {{section.fichename}} à ce status</h4>
     <div>
     <div class="col-xs-14 col-12 col-md-4 form-group" >
       <input class="form-control form-control-lg" type="text" placeholder="Status" [(ngModel)]="section.status"
         name="status">
     </div>
   </div>
-    <button type="submit" class="btn btn-success" (click)="addFiche()"  > add Fiche </button>
+    <button type="submit" class="btn btn-success" (click)="addFiche()"  > ajouter une Fiche à la section courante </button>
 
     <div class="col-xs-14 col-12 col-md-4 form-group">
       <select class="form-control form-control-lg" [(ngModel)]="section.fichename"
